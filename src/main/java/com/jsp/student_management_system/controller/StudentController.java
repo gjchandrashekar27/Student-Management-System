@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.jsp.student_management_system.dto.Student;
 import com.jsp.student_management_system.repository.StudentRepository;
 
@@ -42,5 +44,13 @@ public class StudentController {
 		List<Student> list=studentRepository.findAll();
 		model.addAttribute("list",list);
 		return "fetch.html";
+	}
+	
+	//Detele The record from the Table.
+	@GetMapping("/delete")
+	public String delete(@RequestParam int id, Model model) {
+		studentRepository.deleteById(id);
+		model.addAttribute("msg", "Deleted Success");
+		return loadFetch(model);
 	}
 }
