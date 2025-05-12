@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Management System</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #333;
+        margin-top: 20px;
+    }
+    button {
+        width: 140px; /* Increased size */
+        height: 60px; /* Increased size */
+        font-size: 18px; /* Slightly larger font */
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+        background-color: #0056b3; /* Color changes on hover */
+        transform: scale(1.05); /* Slightly enlarges the button */
+    }
+    .button-container {
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+    <h1>This Is The Main Page You Can Add And Fetch The Student Records</h1>
+    <h3 th:if="${msg}" th:text="${msg}"></h3>
+    <div class="button-container">
+        <a href="/add"><button>Add Records</button></a>
+        <a href="/fetch"><button>Fetch Records</button></a>
+    </div>
+</body>
+</html>

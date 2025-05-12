@@ -1,5 +1,9 @@
 package com.jsp.student_management_system.repository;
 
-public class StudentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.jsp.student_management_system.dto.Student;
+
+public interface StudentRepository extends JpaRepository<Student, Integer>{
 
 }

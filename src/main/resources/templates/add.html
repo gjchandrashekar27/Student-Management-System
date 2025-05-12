@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Student Records</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #e9ecef; /* Light gray background */
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        color: #333;
+        margin-top: 20px;
+    }
+    table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 50%;
+        background-color: #ffffff; /* White background for the table */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px; /* Added padding for better spacing */
+    }
+    td {
+        padding: 15px; /* Increased padding for better spacing */
+        text-align: left;
+        font-size: 16px;
+    }
+    td:first-child {
+        font-weight: bold; /* Bold labels */
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px; /* Increased padding for input fields */
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        width: 140px; /* Increased button size */
+        height: 50px; /* Increased button height */
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    .button-container {
+        margin-top: 30px; /* Increased margin for better spacing */
+    }
+</style>
+</head>
+<body>
+    <h1>Add Student Records</h1>
+    <form action="/add" method="post">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" placeholder="Enter the name" name="name"></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" placeholder="Enter the mobile number" name="mobile"></td>
+            </tr>
+            <tr>
+                <td>Percentage:</td>
+                <td><input type="text" placeholder="Enter percentage" name="percentage"></td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <button type="submit">ADD</button>
+            <a href="/"><button type="button">BACK</button></a>
+        </div>
+    </form>
+</body>
+</html>
