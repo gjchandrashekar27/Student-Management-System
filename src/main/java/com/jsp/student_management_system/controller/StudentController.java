@@ -53,4 +53,20 @@ public class StudentController {
 		model.addAttribute("msg", "Deleted Success");
 		return loadFetch(model);
 	}
+	
+	//Getting edit Html page in the Browser and Based Record ID
+	@GetMapping("/edit")
+	public String edit(@RequestParam int id, Model model) {
+		Student student = studentRepository.findById(id).get();
+		model.addAttribute("student", student);
+		return "edit.html";
+	}
+	
+	//Update The Student Record Based on id.
+	@PostMapping("/update")
+	public String update(@ModelAttribute Student student, Model model) {
+		studentRepository.save(student);
+		model.addAttribute("msg", "Updated Success");
+		return loadFetch(model);
+	}
 }
